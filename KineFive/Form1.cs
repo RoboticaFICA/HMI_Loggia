@@ -34,7 +34,7 @@ namespace KineFive
             {
                 object[] row = new object[] { Angle1, Angle2, Angle3, Angle4, Angle5, Gripper };
                 dgvPose.Rows.Add(row);
-                MessageBox.Show("Renglon agregado exitosamente", "Renglon agregado", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                MessageBox.Show("Renglón agregado exitosamente", "Renglón agregado", MessageBoxButtons.OK, MessageBoxIcon.Information);
             }
             catch (Exception err)
             {
@@ -53,6 +53,42 @@ namespace KineFive
 
             MessageBox.Show($"El renglón \n{e.RowIndex} a sido vaciado", "Accion exitosa", MessageBoxButtons.OK, MessageBoxIcon.Information);
 
+        }
+
+        private void btnEdit_Click(object sender, EventArgs e)
+        {
+            try
+            {
+                if (dgvPose.SelectedRows.Count > 0)
+                {
+                    DataGridViewRow selectedRow = dgvPose.SelectedRows[0];
+
+                    selectedRow.Cells["colAngle0"].Value = tbMotor1.Text;
+                    selectedRow.Cells["colAngle1"].Value = tbMotor2.Text;
+                    selectedRow.Cells["colAngle2"].Value = tbMotor3.Text;
+                    selectedRow.Cells["colAngle3"].Value = tbMotor4.Text;
+                    selectedRow.Cells["colAngle4"].Value = tbMotor5.Text;
+                    selectedRow.Cells["colGripper"].Value = tbMotor6.Text;
+
+                    MessageBox.Show("Renglón editado exitosamente", "Renglón editado", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                }
+                else
+                {
+                    MessageBox.Show("Selecciona un renglón para editar", "Error al seleccionar", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                }
+               
+            }
+            catch (Exception err)
+            {
+                MessageBox.Show($"Se detectó una excepción \n \r {err.Message}", "Error al editar renglón", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+            }
+        }
+
+        private void btnInsert_Click(object sender, EventArgs e)
+        {
+            dgvPose.Rows.Add();
+            MessageBox.Show("Renlón insertado exitosamente", "Renglón insertado", MessageBoxButtons.OK, MessageBoxIcon.Information);
+            
         }
     }
 }

@@ -28,9 +28,9 @@
         /// </summary>
         private void InitializeComponent()
         {
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle2 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle3 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle10 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle11 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle12 = new System.Windows.Forms.DataGridViewCellStyle();
             this.groupBox1 = new System.Windows.Forms.GroupBox();
             this.tbMotor6 = new System.Windows.Forms.TextBox();
             this.tbMotor3 = new System.Windows.Forms.TextBox();
@@ -46,7 +46,14 @@
             this.label4 = new System.Windows.Forms.Label();
             this.groupBox2 = new System.Windows.Forms.GroupBox();
             this.dgvPose = new System.Windows.Forms.DataGridView();
+            this.colAngle0 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.colAngle1 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.colAngle2 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.colAngle3 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.colAngle4 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.colGripper = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.groupBox3 = new System.Windows.Forms.GroupBox();
+            this.btnInsert = new System.Windows.Forms.Button();
             this.btnStop = new System.Windows.Forms.Button();
             this.btnRun = new System.Windows.Forms.Button();
             this.btnTest = new System.Windows.Forms.Button();
@@ -55,13 +62,6 @@
             this.btnEdit = new System.Windows.Forms.Button();
             this.btnAdd = new System.Windows.Forms.Button();
             this.lvCommands = new System.Windows.Forms.ListView();
-            this.colAngle0 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.colAngle1 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.colAngle2 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.colAngle3 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.colAngle4 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.colGripper = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.btnInsert = new System.Windows.Forms.Button();
             this.groupBox1.SuspendLayout();
             this.groupBox2.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dgvPose)).BeginInit();
@@ -224,14 +224,14 @@
             // dgvPose
             // 
             this.dgvPose.AllowUserToAddRows = false;
-            dataGridViewCellStyle1.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle1.BackColor = System.Drawing.SystemColors.Control;
-            dataGridViewCellStyle1.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            dataGridViewCellStyle1.ForeColor = System.Drawing.SystemColors.WindowText;
-            dataGridViewCellStyle1.SelectionBackColor = System.Drawing.SystemColors.Highlight;
-            dataGridViewCellStyle1.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
-            dataGridViewCellStyle1.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
-            this.dgvPose.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle1;
+            dataGridViewCellStyle10.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle10.BackColor = System.Drawing.SystemColors.Control;
+            dataGridViewCellStyle10.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle10.ForeColor = System.Drawing.SystemColors.WindowText;
+            dataGridViewCellStyle10.SelectionBackColor = System.Drawing.SystemColors.Highlight;
+            dataGridViewCellStyle10.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle10.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.dgvPose.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle10;
             this.dgvPose.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.dgvPose.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
             this.colAngle0,
@@ -240,28 +240,64 @@
             this.colAngle3,
             this.colAngle4,
             this.colGripper});
-            dataGridViewCellStyle2.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle2.BackColor = System.Drawing.SystemColors.Window;
-            dataGridViewCellStyle2.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            dataGridViewCellStyle2.ForeColor = System.Drawing.SystemColors.ControlText;
-            dataGridViewCellStyle2.SelectionBackColor = System.Drawing.SystemColors.Highlight;
-            dataGridViewCellStyle2.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
-            dataGridViewCellStyle2.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
-            this.dgvPose.DefaultCellStyle = dataGridViewCellStyle2;
+            dataGridViewCellStyle11.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle11.BackColor = System.Drawing.SystemColors.Window;
+            dataGridViewCellStyle11.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle11.ForeColor = System.Drawing.SystemColors.ControlText;
+            dataGridViewCellStyle11.SelectionBackColor = System.Drawing.SystemColors.Highlight;
+            dataGridViewCellStyle11.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle11.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
+            this.dgvPose.DefaultCellStyle = dataGridViewCellStyle11;
             this.dgvPose.Location = new System.Drawing.Point(12, 28);
             this.dgvPose.Name = "dgvPose";
             this.dgvPose.ReadOnly = true;
-            dataGridViewCellStyle3.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle3.BackColor = System.Drawing.SystemColors.Control;
-            dataGridViewCellStyle3.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            dataGridViewCellStyle3.ForeColor = System.Drawing.SystemColors.WindowText;
-            dataGridViewCellStyle3.SelectionBackColor = System.Drawing.SystemColors.Highlight;
-            dataGridViewCellStyle3.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
-            dataGridViewCellStyle3.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
-            this.dgvPose.RowHeadersDefaultCellStyle = dataGridViewCellStyle3;
+            dataGridViewCellStyle12.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle12.BackColor = System.Drawing.SystemColors.Control;
+            dataGridViewCellStyle12.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle12.ForeColor = System.Drawing.SystemColors.WindowText;
+            dataGridViewCellStyle12.SelectionBackColor = System.Drawing.SystemColors.Highlight;
+            dataGridViewCellStyle12.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle12.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.dgvPose.RowHeadersDefaultCellStyle = dataGridViewCellStyle12;
             this.dgvPose.Size = new System.Drawing.Size(441, 212);
             this.dgvPose.TabIndex = 0;
             this.dgvPose.CellDoubleClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgvPose_CellDoubleClick);
+            // 
+            // colAngle0
+            // 
+            this.colAngle0.HeaderText = "Angle Motor 1";
+            this.colAngle0.Name = "colAngle0";
+            this.colAngle0.ReadOnly = true;
+            // 
+            // colAngle1
+            // 
+            this.colAngle1.HeaderText = "Angle Motor 2";
+            this.colAngle1.Name = "colAngle1";
+            this.colAngle1.ReadOnly = true;
+            // 
+            // colAngle2
+            // 
+            this.colAngle2.HeaderText = "Angle Motor 3";
+            this.colAngle2.Name = "colAngle2";
+            this.colAngle2.ReadOnly = true;
+            // 
+            // colAngle3
+            // 
+            this.colAngle3.HeaderText = "Angle Motor 4";
+            this.colAngle3.Name = "colAngle3";
+            this.colAngle3.ReadOnly = true;
+            // 
+            // colAngle4
+            // 
+            this.colAngle4.HeaderText = "Angle Motor 5";
+            this.colAngle4.Name = "colAngle4";
+            this.colAngle4.ReadOnly = true;
+            // 
+            // colGripper
+            // 
+            this.colGripper.HeaderText = "Gripper";
+            this.colGripper.Name = "colGripper";
+            this.colGripper.ReadOnly = true;
             // 
             // groupBox3
             // 
@@ -281,6 +317,17 @@
             this.groupBox3.TabIndex = 2;
             this.groupBox3.TabStop = false;
             this.groupBox3.Text = "Commands";
+            // 
+            // btnInsert
+            // 
+            this.btnInsert.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnInsert.Location = new System.Drawing.Point(511, 23);
+            this.btnInsert.Name = "btnInsert";
+            this.btnInsert.Size = new System.Drawing.Size(75, 23);
+            this.btnInsert.TabIndex = 8;
+            this.btnInsert.Text = "Insert";
+            this.btnInsert.UseVisualStyleBackColor = true;
+            this.btnInsert.Click += new System.EventHandler(this.btnInsert_Click);
             // 
             // btnStop
             // 
@@ -341,6 +388,7 @@
             this.btnEdit.TabIndex = 2;
             this.btnEdit.Text = "Edit";
             this.btnEdit.UseVisualStyleBackColor = true;
+            this.btnEdit.Click += new System.EventHandler(this.btnEdit_Click);
             // 
             // btnAdd
             // 
@@ -362,52 +410,6 @@
             this.lvCommands.Size = new System.Drawing.Size(358, 120);
             this.lvCommands.TabIndex = 0;
             this.lvCommands.UseCompatibleStateImageBehavior = false;
-            // 
-            // colAngle0
-            // 
-            this.colAngle0.HeaderText = "Angle Motor 1";
-            this.colAngle0.Name = "colAngle0";
-            this.colAngle0.ReadOnly = true;
-            // 
-            // colAngle1
-            // 
-            this.colAngle1.HeaderText = "Angle Motor 2";
-            this.colAngle1.Name = "colAngle1";
-            this.colAngle1.ReadOnly = true;
-            // 
-            // colAngle2
-            // 
-            this.colAngle2.HeaderText = "Angle Motor 3";
-            this.colAngle2.Name = "colAngle2";
-            this.colAngle2.ReadOnly = true;
-            // 
-            // colAngle3
-            // 
-            this.colAngle3.HeaderText = "Angle Motor 4";
-            this.colAngle3.Name = "colAngle3";
-            this.colAngle3.ReadOnly = true;
-            // 
-            // colAngle4
-            // 
-            this.colAngle4.HeaderText = "Angle Motor 5";
-            this.colAngle4.Name = "colAngle4";
-            this.colAngle4.ReadOnly = true;
-            // 
-            // colGripper
-            // 
-            this.colGripper.HeaderText = "Gripper";
-            this.colGripper.Name = "colGripper";
-            this.colGripper.ReadOnly = true;
-            // 
-            // btnInsert
-            // 
-            this.btnInsert.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnInsert.Location = new System.Drawing.Point(511, 23);
-            this.btnInsert.Name = "btnInsert";
-            this.btnInsert.Size = new System.Drawing.Size(75, 23);
-            this.btnInsert.TabIndex = 8;
-            this.btnInsert.Text = "Insert";
-            this.btnInsert.UseVisualStyleBackColor = true;
             // 
             // Form1
             // 
