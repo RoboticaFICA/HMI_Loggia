@@ -86,9 +86,26 @@ namespace KineFive
 
         private void btnInsert_Click(object sender, EventArgs e)
         {
-            dgvPose.Rows.Add();
-            MessageBox.Show("Renlón insertado exitosamente", "Renglón insertado", MessageBoxButtons.OK, MessageBoxIcon.Information);
-            
+            try
+            {
+                object[] row = new object[] { Angle1, Angle2, Angle3, Angle4, Angle5, Gripper };
+                int index = dgvPose.CurrentRow?.Index ?? -1;
+                if (index >= 0)
+                {
+                    dgvPose.Rows.Insert(index + 1, row);
+                }
+                else
+                {
+                    dgvPose.Rows.Insert(0, row);
+                }
+                MessageBox.Show("Renglón insertado exitosamente", "Renglón insertado", MessageBoxButtons.OK, MessageBoxIcon.Information);
+
+            }
+            catch(Exception err) 
+            {
+                MessageBox.Show($"Se detectó una excepción \n \r {err.Message}", "Error al insertar renglón", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+            }
+
         }
     }
 }
