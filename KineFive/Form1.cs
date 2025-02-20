@@ -107,5 +107,38 @@ namespace KineFive
             }
 
         }
+
+        private void btnTest_Click(object sender, EventArgs e)
+        {
+
+            try
+            {
+                lvCommands.Items.Clear();
+
+                foreach (DataGridViewRow row in dgvPose.Rows)
+                {
+                    var commands = new string[]
+                    {
+                            row.Cells[0].Value.ToString(),
+                            row.Cells[1].Value.ToString(),
+                            row.Cells[2].Value.ToString(),
+                            row.Cells[3].Value.ToString(),
+                            row.Cells[4].Value.ToString(),
+                            row.Cells[5].Value.ToString()
+                    };
+
+                    var command = $"LMC {string.Join(", ", commands)};";
+                    lvCommands.Items.Add(command);
+                    
+                }
+
+                MessageBox.Show("Generación exitosa de comandos", "Comandos insertados", MessageBoxButtons.OK, MessageBoxIcon.Information);
+            }
+            catch (Exception err)
+            {
+                MessageBox.Show($"Error: {err.Message}", "Error al generar comandos", MessageBoxButtons.OK, MessageBoxIcon.Error);
+            }
+
+        }
     }
 }
